@@ -1,0 +1,78 @@
+# Configuração do RoseVender v 3.0
+# Precisa de suporte? Entre em nosso grupo do discord: https://discord.gg/rosemc
+
+# Defina a permissão desejada para cada tipo de venda (definida por padrão como 'rosevender.shift' e 'rosevender.automatico')
+permissao-shift: 'rosevender.shift'
+permissao-automatico: 'rosevender.automatico'
+permissao-vender: 'rosevender.usar'
+
+# Siga o modelo abaixo de venda
+# ALERTA: Lembre-se que este é o preço definido pela quantia de blocos definida na configuração abaixo.
+Itens:
+    Pedra:
+      ID: '1:0'
+      Valor: 10.0
+      Quantidade: 1 # Quantidade de itens para multiplicar
+
+    Grama:
+      ID: '2:0'
+      Valor: 25.0
+      Quantidade: 2304 # Exemplo de quantidade de itens para todo inventario
+        
+Config:
+    # Utilizado para a solução de problemas 
+    debug-mode: true
+
+    # Deseja executar a venda de forma asíncrona?
+    # Desativar o recurso abaixo pode causar problemas de desempenho em servidores muito grandes
+    run-sell-async: true
+
+    # Insira aqui o delay que você deseja para o shift vender [Em segundos]
+    # Insira zero para remover o delay 
+    DelayShift: 1.0
+
+    # Insira aqui o delay que você deseja para o auto venda [Em segundos]
+    # Caso insira um valor menor que 0.5, o valor default será usado:
+    DelayAutoVenda: 2.5
+    
+Multiplicador:
+    # Tipos de Multiplicador
+    # Valores válidos [grupo,permissao,nenhum]
+    # Caso utilize 'grupo', o jogador receberá o multiplicador
+    # de acordo com seu grupo.	
+    # Caso utilize 'permissao', o jogador receberá o multiplicador
+    # de acordo com sua permissao.
+    Tipo: 'grupo'
+
+    # Valores iguais a 100% representam todo o valor
+    # Exemplos:
+    #
+    # Item custa 10 coins
+    # 100% = 10 coins
+    # 50% = 5 coins
+    # 200% = 20 coins
+    Membro:
+        Grupo: 'membro'
+        Permissao: 'vender.membro'
+        Multiplicador: '100%'
+    # Neste exemplo, o grupo vip vai receber 2X mais que o membro nas vendas
+    Nobre:
+        Grupo: 'nobre'
+        Permissao: 'vender.nobre'
+        Multiplicador: '175%'
+    Rei:
+      Grupo: 'rei'
+      Permissao: 'vender.rei'
+      Multiplicador: '200%'
+    Imperador:
+      Grupo: 'imperador'
+      Permissao: 'vender.imperador'
+      Multiplicador: '225%'
+
+Mensagens:
+    Sem-Permissao: "&7Você não tem &cpermissão &7para executar este comando."
+    Configuracao-Recarregada: "&cConfiguração &7e &carquivos &7de linguagem foram &crecarregados&7."
+    Captcha-Invalido: "&7O captcha inserido é &cinválido&7."
+    Vendido-Sucesso: "&7Você vendeu &c%itens% &7itens por &c$%dinheiro%&7."
+    Sem-Itens: "&7Você não possui &citens &7para serem &cvendidos&7."
+    Inventario-Vazio: "&7Você não pode estar com um &cinventário vazio&7."

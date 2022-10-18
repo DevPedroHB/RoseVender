@@ -1,0 +1,11 @@
+author: PedroHB_
+name: ${project.artifactId}
+version: ${project.version}
+main: ${main-bukkit}
+description: 'Comando para vender itens com captcha, auto-venda e venda com shift.'
+website: 'https://github.com/DevPedroHB'
+api-version: 1.13
+softdepend: [Vault]
+commands:
+  vender:
+    description: 'Comando para vender itens'
